@@ -53,7 +53,9 @@ class Game extends React.Component {
         }
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      xBack: 1,
+      oBack: 1
     };
   }
 
@@ -76,11 +78,24 @@ class Game extends React.Component {
     });
   }
 
-  jumpTo(step) {
-    this.setState({
-      stepNumber: step,
-      xIsNext: (step % 2) === 0
-    });
+  jumpTo(step,player) {
+    if (step < 0){
+      return;
+    }
+    if(!player && this.state.xBack >= 1){
+      this.setState({
+        stepNumber: step,
+        xIsNext: (step % 2) === 0,
+        xBack: this.state.xBack-1
+      });
+    }else if(player && this.state.oBack >= 1){
+      this.setState({
+        stepNumber: step,
+        xIsNext: (step % 2) === 0,
+        oBack: this.state.oBack-1
+      });
+    }
+
   }
 
   render() {
@@ -116,7 +131,9 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <div>Xはあと{this.state.xBack}回戻れます</div>
+          <div>Oはあと{this.state.oBack}回戻れます</div>
+          <ol><button onClick={() => this.jumpTo(this.state.stepNumber-1,this.state.xIsNext)}>戻る</button></ol>
         </div>
       </div>
     );

@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>js practice</title>
-  <script src="./book1_4.js"></script>
-  <script src="./book5.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>js practice</title>
+    <script src="./book1_4.js"></script>
+    <script src="./book5.js"></script>
+  </head>
 
-<body>
-  <script type="text/javascript">
-    /*
-    let y = 1;
-    z = 2; //悪い例
-    const PI = 3.141592653589;
-    console.log(`hello,pi is about ${PI}`);
-    console.log('10'+1);
-    console.log(10+'1');
-
-    let symbol = Symbol("s1");
-    */
-  </script>
-</body>
+  <body>
+    <div class="header">Header領域</div>
+    <div class="main">
+      <h1>見出し</h1>
+      <p>コンテンツ</p>
+      <div id="hoge"></div>
+      <div class="eventTest">
+        <!--<input type="button" onmouseover="displayAlert()" value="ボタン">-->
+        <input type="button" value="ボタン">
+        <input type="button" value="add" id="addButton">
+      </div>
+      <img id="testimg" src="./pet_darui_dog.jpg" height=400 weight=500>
+    </div>
+    <div class="footer">
+      <span>Footer領域</span>
+      <a href="#">リンク</a>
+    </div>
+  </body>
+  <!-- DOMはHTML読み込み後じゃないと動かない？ -->
+  <script src="./book6.js"></script>
 </html>

@@ -1,6 +1,8 @@
 // DOM: Document Object Model
 // W3Cが標準化を作っている 1~4
 
+console.group("6章")
+
 var timeDoc = document.getElementById("hoge");
 timeDoc.textContent = "ほげ"
 
@@ -40,3 +42,6 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log("element created");
   },false));
 },false)
+
+console.log("6章ログ終わり");
+console.groupEnd();
